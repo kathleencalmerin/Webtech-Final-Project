@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+<title>SERVLETS</title>
+</head>
+
+<body>
+
+
+
+<h1>SERVLETS</h1>
+
+<h2>What are Servlets?</h2>
+<p> <strong>Servlets</strong> are Java Programs thay sits in a server and when a request comes, it will come into play.
+	Servlets are mapped into the a URL. The term Servlets was coined from the word <strong>Java Applet</strong> which is a program that is usually
+	sent as a separate file with an HTML page. Java Applets are usually used by running a client that can perform calculation for the client or user
+	or it is used to position images based on the interaction of the user.</p>
+
+<p>Java Servlets runs inside a container, it is an object that responds to an HTTP Request.</p>
+
+	
+<h2>Servlets Advantages to Common Gateway Interface</h2>
+	<ol>
+        <li>Performance is significantly better.</li>
+		<li>Servlets execute within the address space of a Web server. It is not necessary to create a separate process to handle each client request.</li>
+		<li>Servlets are platform-independent because they are written in Java.</li>
+		<li>Java security manager on the server enforces a set of restrictions to protect the resources on a server machine. So servlets are trusted.</li>
+		<li>The full functionality of the Java class libraries is available to a servlet. It can communicate with applets, databases, or other software via the sockets and RMI mechanisms that you have seen already.</li>
+
+    </ol>
+
+<h2>Servlets Packages</h2>
+	<p> Servlets can be created using the <strong> javax.servlet</strong> and <strong>javax.servlet.http packages</strong> , which are a standard part of the Java's enterprise edition, an expanded version of the Java class library that supports large-scale development projects.
+    </p>
+
+	<h3> javax.servlet </h3>
+	<ul>
+		<li> Servlet, GenericServlet</li>
+		<li> ServletRequest, ServletResponse </li>
+		<li> ServletConfig, ServletContext </li>
+		<li> RequestDispatcher </li>
+	</ul>
+
+	<h3> javax.servlet.http </h3>
+	<ul>
+		<li>HttpServlet </li>
+		<li>HttpServletRequest</li>
+		<li>HttpServletResponse </li>
+		<li>HttpSession </li>
+		<li>Cookie</li>
+	</ul>
+
+<h2>Servlets Tasks</h2>
+<h3>Servlets can perform the following major tasks:</h3>
+<ol>
+    <li>Send the implicit HTTP response to the clients (browsers).</li>
+    <li>Send the explicit data (i.e., the document) to the clients (browsers).</li>             
+    <li>Read the explicit data sent by the clients (browsers).</li>           
+    <li>Read the implicit HTTP request data sent by the clients (browsers).</li>           
+    <li>Process the data and generate the results.</li>             
+ </ol>           
+
+<h2>Typical uses for HTTP Servlets:</h2>
+	<ol>
+		<li>Processing and/or storing data submitted by an HTML form.</li>
+		<li>Providing dynamic content, e.g. returning the results of a database query to the client.</li>
+		<li>Managing state information on top of the stateless HTTP, e.g. for an online shopping cart system which manages shopping carts for many concurrent customers and maps every request to the right customer</li>
+	</ol>
+		
+<h2>Servlet Life Cycle</h2>
+	<ol>
+		<li>Load Servlet Class</li>
+		<li>Create Instance of Servlet</li>
+		<li>Call the servlets init() method</li>
+		<li>Call the servlets service() method</li>
+		<li>Call the servlets destroy() method</li>
+	</ol>
+
+<h2>HTTP Servlet Class Method:</h2>
+	<ul>
+		<li>doGet()</li>
+		<li>doPost()</li>
+		<li>doHead()</li>
+		<li>doPut()</li>
+		<li>doDelete()</li>
+		<li>doOptions()</li>
+		<li>doTrace()</li>
+	</ul>
+
+<h2> Servlet Processing </h2>
+	<ul>
+		<li>Client sends a request to a web server URL that is mapped to a servlet. Web server passes on the request to the servlet container</li> 
+		<li>Servlet container checks if servlet is already loaded</li>
+		<li>If it is not yet loaded, servlet container loads the servlet class and instantiates the servlet, and calls its init method. </li>
+		<li>Servlet container invokes the servlet‟s service method, passing request and response objects as arguments </li>
+		<li> Servlet processes the request using the response object to create the response, which is returned by the servlet container to the web server, which in turn sends the response to the client </li>
+		<li>Subsequent request to the servlet will not require servlet re-instantiation, unless the servlet has been unloaded; before a servlet is unloaded, the servlet container invokes its destroy method. </li>
+	</ul>
+	
+<h2> init(config) </h2>
+	<ul>
+	<li> Invoked once on the servlet by the servlet container when the servlet is instantiated; can be used by the servlet for one-time startup initialization  </li>
+	</ul>
+	
+<h2> service(request, response) </h2>
+	<ul>
+		<li>Invoked each time the servlet is called upon to process a request (typically on a separate thread for each call)  </li>
+		<li> In HttpServlet, the default Service implementation maps the call to a specific doXXX() method (e.g. doGet, doPost) which is typically overridden to affect the servlet‟s functionality </li>
+	</ul>
+	
+<h2> Destroy() </h2>
+	<ul>
+		<li> Invoked on the servlet by the servlet container when the servlet is to be unloaded (e.g. when the application is stopped or undeployed); can be used by the servlet for clean-up processing (e.g. resource deallocation) </li>
+	</ul>
+	
+<h2> Servlet Request Processing (HttpServletRequest)</h2>
+	<ul>
+		<li> Retrieving user-supplied request parameters </li>
+		<li> Retrieving request header values </li>
+	</ul>
+	
+<h2> Servlet Response Processing (HttpServletResponse)  </h2>
+	<ul>
+		<li> Setting response status code </li>
+		<li> Setting response headers </li>
+		<li>Obtaining output object for sending the response </li>
+	</ul>
+	
+<h2> Servlet Request Dispatching (RequestDispatcher)  </h2>
+	<ul>
+	<li> Obtain a RequestDispatcher to a resource (static or dynamic) from the request object </li>
+		<ul> 
+		<li> RequestDispatcher rqstDsp; <br> rqstDsp = request.getRequestDispatcher(res); </li>
+		</ul>
+	
+		<li> Include the dispatcher resource (or its output) in the current response; one or more resources can be included (e.g. use for banners, footers, etc.) </li>
+		<ul> 
+		<li> rqstDsp.include(request, response);  </li>
+		</ul>
+		
+		<li> Forwards the processing of the current request to the dispatcher resource; the servlet processing the current request must not generate a response ( e.g. use in MVC “controller” servlets) </li>
+		<ul>
+		<li> rqstDsp.forward(request, response); </li>
+		</ul>
+		
+		<li> Session Tracking(HttpSession)</li>
+		<ul>
+		<li> Session tracking support is implemented either cookies or URL-rewriting  </li>
+		<li> Obtaining session object from the current request </li>
+			<ul>
+				<li> HttpSession session;  <br>
+				session = request.getSession(createNew); </li>
+			</ul>
+		<li> Obtaining session information (HttpSession) </li>
+			<ul> 
+			<li> getCreationTime(), getLastAccessedTime(), getMaxInactiveInternal(), getId(), isNew(), setMaxInactiveInterval(int val)</li>
+			</ul>
+		<li> destroying sessions </li>
+			<ul>
+			<li> invalidate()</li>
+			</ul>
+		<li> URL-rewriting(HttpServletResponse) </li>
+			<ul>
+			<li> URL-rewriting(HttpServletResponse) </li>
+			</ul>
+		</ul>
+	</ul>
+
+<h2>Cookies in Servlets</h2>
+<p><strong>Cookies</strong> are small pieces of informations that is persisted between multiple clients.</p>
+<p>A cookie has the following:</p>
+<ul>
+	<li>Name</li>
+	<li>Single Value</li>
+	<li>Comment(optional)</li>
+	<li>Path(optional)</li>
+	<li>domain qualifiers(optional)</li>
+	<li>Maximum Age</li>
+	<li>Version Number</li>
+</ul>
+
+<h2>The following diagram shows how a cookie works.</h2>
+
+<h2>Types of Cookies</h2>
+<ul>
+	<li>Persistent Cookie</li><p>- it is valid for multiple sessions, the cookie will only be removed once the user will logout or signout.</p>
+	<li>Non-Persistent Cookie</li><p>- it is valid for only a single session, the cookie will be removed everytime the browser will be closed.</p>
+</ul>
+	
+<h2>Advantages of Cookies</h2>
+<ul>
+	<li>It is a simple way to maintain the state of a website.</li>
+	<li>It is maintained in the Client Side.</li>
+</ul>
+
+<h2>Disadvantages of Cookies</h2>
+<ul>
+	<li>If the cookie is disabled in the browser, it will not work.</li>
+	<li>Textual Infromations are the once only that can be set in the object of the cookie.</li>
+</ul>
+	
+<h2>Servlets Architecture</h2>
+<h4>This Diagram shows the Architecture of the Servlets</h4>
+
+</body>
+</html>
