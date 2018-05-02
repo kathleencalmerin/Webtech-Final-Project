@@ -31,7 +31,8 @@
     </div>
     <div id="site_content">
       <div id="content">
-        <h3> Java Servlet</h3>
+          <button class="accordion">Java Servlet</button>
+                <div class="panel">
           <center><video width="400" height="300" controls>
             <source src="servletintro.mp4" type="video/mp4">
             <source src="servletintro.ogg" type="video/ogg">
@@ -39,10 +40,197 @@
             <p>Reference: https://www.youtube.com/watch?v=CRvcm7GKrF0</p>
             <p>Introduction to Java Servlet</p>
       </div>
+           <button class="accordion">PHP</button>
+                <div class="panel">
+            <center><video width="400" height="300" controls>
+                <source src="phpintro.mp4" type="video/mp4">
+            <source src="phpintro.mp4" type="video/ogg">
+              </video></center>
+             <p>Reference: https://www.youtube.com/watch?v=KL7_wZSTY6Y</p>
+            <p>Introduction to PHP</p>
+        </div>
+           <button class="accordion">Node JS</button>
+                <div class="panel">
+                     <center><video width="400" height="300" controls>
+                <source src="nodejsintro.mp4" type="video/mp4">
+            <source src="nodejsintro.mp4" type="video/ogg">
+              </video></center>
+                    <p>Reference: https://www.youtube.com/watch?v=65a5QQ3ZR2g </p>
+                    <p>Introduction to Node.js </p>
+          </div>
+          <button class="accordion">Java Server Page(JSP)</button>
+                <div class="panel">
+                    <h1>JSP</h1>
+<ul>
+<li>Java Server Pages (JSP) is a server-side programming technology that enables the creation of dynamic, platform-independent method for building Web-based applications. JSP have access to the entire family of Java APIs, including the JDBC API to access enterprise databases. This tutorial will teach you how to use Java Server Pages to develop your web applications in simple and easy steps.</li>
+
+<li>JavaServer Pages (JSP) is a technology for developing Webpages that supports dynamic content. This helps developers insert java code in HTML pages by making use of special JSP tags, most of which start with <% and end with %>.</li>
+
+<li>A JavaServer Pages component is a type of Java servlet that is designed to fulfill the role of a user interface for a Java web application. Web developers write JSPs as text files that combine HTML or XHTML code, XML elements, and embedded JSP actions and commands.</li>
+
+<li>JSP tags can be used for a variety of purposes, such as retrieving information from a database or registering user preferences, accessing JavaBeans components, passing control between pages, and sharing information between requests, pages etc.</li>
+</ul>
+<h1> Why use JSP? </h1>
+<ul>
+<li>Performance is significantly better because JSP allows embedding Dynamic Elements in HTML Pages itself instead of having separate CGI files.</li>
+<li>JSP are always compiled before they are processed by the server unlike CGI/Perl which requires the server to load an interpreter and the target script each time the page is requested.</li>
+<li>JavaServer Pages are built on top of the Java Servlets API, so like Servlets, JSP also has access to all the powerful Enterprise Java APIs, including JDBC, JNDI, EJB, JAXP, etc.</li>
+<li>JSP pages can be used in combination with servlets that handle the business logic, the model supported by Java servlet template engines</li>
+</ul>
+
+
+
+<h1>JSP Standard Actions </h1>
+<table>
+	<th>Syntax</th>
+	<th>Purpose</th>
+<tr>
+<td>jsp:include</td>
+<td>Includes a file at the time the page is requested.</td>
+</tr>
+<tr>
+<td>jsp:useBean</td>
+<td>Finds or instantiates a JavaBean.</td>
+</tr>
+<tr>
+<td>jsp:setProperty</td>
+<td>Sets the property of a JavaBean.</td>
+</tr>
+<tr>
+<td>jsp:getProperty</td>
+<td>Inserts the property of a JavaBean into the output.</td>
+</tr>
+<tr>
+<td>jsp:forward</td>
+<td>Forwards the requester to a new page</td>
+</tr>
+<tr>
+<td>jsp:plugin</td>
+<td>Generates browser-specific code that makes an OBJECT or EMBED tag for the Java plugin.</td>
+</tr>
+<tr>
+<td>jsp:element</td>
+<td>jsp:attribute</td>
+</tr>
+<tr>
+<td>jsp:body</td>
+<td>Defines dynamically-defined XML element's body.</td>
+</tr>
+<tr>
+<td>jsp:text</td>
+<td>Used to write template text in JSP pages and documents.</td>
+</tr>
+</table>
+
+
+
+<h1>JSTL </h1>
+<p>JSTL has support for common, structural tasks such as iteration and conditionals, tags for manipulating XML documents, internationalization tags, and SQL tags. It also provides a framework for integrating the existing custom tags with the JSTL tags.</p>
+
+<h2> Classificication of JSTL Tags </h2>
+<ol type="A">
+<li>Core Tags </li>
+<li>Formatting Tags </li>
+<li> SQL Tags </li>
+<li> XML Tags </li>
+<li>JSTL Functions </li>
+	
+	
+<ul>
+<li> Motivation</li>
+	<ul>
+	<li> Separate business logic from presentation concern </li>
+		<ul>
+		<li> Allows modern web development teams to be divided up into programmers and web page authors / designers </li>
+			<li> Fosters component reuse (e.g. the same data object can be consumed by user agents of varying capabilities and needs) </li>
+		</ul>
+	<li> Servlets can be very powerful for programming business logic, but are very awkward to use when generating static (i.e. template) content.  </li>	
+		<li> (X)HTML marked-up documents are very convenient for static content generation but cannot be used to program business logic (or generate dynamic content arising from data produced by the business logic). </li>
+	</ul>
+	<li> Features </li>
+	<ul>
+	<li> Text-based document capable of generating both static and dynamic content (typically intermixed) </li>
+		<li>	Mark-up based document syntax (JSP-style or XML-style), combining (X) HTML elements as well as standard and custom JSP elements; thus, web page authors can feel right “at home” with the mark-up syntax.</li>
+		<li> Embedded Java Coding support via “scriptlets”  </li>
+		<ul>
+	<li> "<%  %>" </li>	
+		</ul>
+	<li>Template text are converted into JSPWriter  </li>
+	</ul>
+	<li> Components</li>
+	<ul>
+	<li> Template (i.e. static) text </li>
+		<li> JSP elements</li>
+		<ul>
+		<li> Directives </li>
+			<ul>
+			<li>" <%@ page ContentType=”text/html” pageEncoding=”UTF-8” %> "</li>
+				<li> "<%@ page import=”java.util.Random” %> "</li>
+						<ul>
+							<li>autoFlush </li>
+							 <li>buffer </li>
+							 <li>contentType </li>
+							 <li>errorPage </li>
+							 <li>extends </li>
+							 <li>import </li>
+							 <li>info </li>
+							 <li>isELIgnored</li> 
+							 <li>isErrorPage </li>
+							 <li>isThreadSafe </li>
+							 <li>language </li>
+							<li>pageEncoding o session</li> 
+					</ul>
+				<li> "<%@ taglib uri=”http://java.sun.com/jsp/jstl/core” prefix=”c” %> "</li>
+					<ul>
+						<li>prefix </li> 
+						 <li>taglib </li> 
+						 <li>uri </li> 
+					</ul>
+						
+			</ul>
+		<li> Scripting Elements</li>
+			<ul>
+			<li> Declarations</li>
+				<ul>
+					<li>"<%! int a = 100; %>" </li>
+					<li> "<%! int square(int n) { return n*n ; } %>" </li>
+					</ul>
+			<li> Expressions </li>
+				<ul>
+				<li> "<% for(int i = 0; i < 10 ; i++) { out.println(i); } %> "</li>
+				</ul>
+				</ul>
+			
+		</ul>
+	</ul>
+</ul>
+                    </ol>
+          </div>
+        </div>
     </div>
     <div id="footer">
       <p>Web system and technology | 2018</p>
     </div>
   </div>
+    <script>
+    var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    });
+}
+    </script>
 </body>
 </html>
