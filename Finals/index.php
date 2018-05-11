@@ -15,8 +15,12 @@ else
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
 </head>
-<?=$_SESSION['sess_user'];?><a href="logout.php">Logout</a>
 <body>
+    <?=$_SESSION['sess_user'];?>
+    <div class="w3-container w3-red">
+        <div align="right" style="font-style: oblique; font-size: 20px;">
+    <a href="logout.php">Logout</a>
+        </div>
   <div id="main">
     <div id="header">
       <div id="logo">

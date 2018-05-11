@@ -8,7 +8,6 @@ else
     ?>
 <!DOCTYPE HTML>
 <html>
-
 <head>
   <title>webtech</title>
   <meta name="description" content="website description" />
@@ -16,8 +15,12 @@ else
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
 </head>
-<?=$_SESSION['sess_user'];?><a href="logout.php">Logout</a>
 <body>
+    <?=$_SESSION['sess_user'];?>
+    <div class="w3-container w3-red">
+        <div align="right" style="font-style: oblique; font-size: 20px;">
+    <a href="logout.php">Logout</a>
+        </div>
   <div id="main">
     <div id="header">
       <div id="logo">
@@ -417,8 +420,7 @@ else
 		
 		
 		<p> Now you will be able to create an application were you will be able to see the result in the web browser with the your localhost and the port you have provided in the code of your created server.</p>
-	
-          </div>
+            </h2>
                     </h2>
           </div>
           <button class="accordion">Java Server Page(JSP)</button>
@@ -571,6 +573,7 @@ else
           </div>
         </div>
     </div>
+        </div>
     <div id="footer">
       <p>Web system and technology | 2018</p>
     </div>
